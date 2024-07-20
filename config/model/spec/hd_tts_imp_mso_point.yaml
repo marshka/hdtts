@@ -1,0 +1,13 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  hparams:
+    hidden_size: 64
+    dilation: 4
+    rnn_layers: 3
+    pooling_layers: 3
+    mp_method: ["diffconv", "diffconv"]
+    mp_kernel_size: 1
+    fully_connected_readout: False
+    multi_step_scores: False

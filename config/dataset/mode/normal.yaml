@@ -1,0 +1,6 @@
+name: normal
+p_fault: 0
+p_noise: 0
+p_propagation: 0
+min_seq: 0
+max_seq: 0

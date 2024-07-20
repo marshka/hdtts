@@ -1,0 +1,36 @@
+# @package _global_
+
+#### Dataset params ###########################################################
+dataset:
+  name: mso
+  splitting:
+    val_len: 0.1
+    test_len: 0.2
+  connectivity:
+    include_self: False
+    layout: csr
+  hparams:
+    n_nodes: 100
+    n_steps: 10000
+    spatial_order: 3
+    graph_generator: "knn3"
+    noise: 0.0
+    propagate_mask: False
+    cached: True
+    root: ./data/${dataset.name} 
+    p_fault: 0
+    p_noise: 0.05
+    min_seq: 8
+    max_seq: 48
+    seed: 123
+    max_neighbors: 5
+
+#### Windowing params #########################################################
+window: 72
+horizon: 36
+stride: 1
+
+scaler:
+  method: Standard
+  axis: graph
+  scale_target: False

@@ -1,0 +1,23 @@
+name: hd-tts
+channels:
+  - pytorch
+  - nvidia                    # remove for cpu installation
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch=2.1
+  - pytorch-cuda=12.1         # remove for cpu installation
+  - lightning=2.1
+  - numpy<2.0
+  - pyg=2.4
+  - pytorch-cluster
+  - pytorch-scatter
+  - pytorch-sparse
+  - pip
+  - pip:
+      - hydra-core
+      - omegaconf
+      - tensorboard
+      - torch-spatiotemporal[experiment]==0.9.5

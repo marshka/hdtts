@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - gwnet
+  - _self_
+
+#### Model params #############################################################
+model:
+  name: gwnet
+  hparams:
+    n_layers: 7
+    temporal_kernel_size: 5
+    dilation: 5
+  receptive_field: 77

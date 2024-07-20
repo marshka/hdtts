@@ -1,0 +1,14 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: rnn
+  hparams:
+    hidden_size: 64
+    ff_size: 128
+    rec_layers: 2
+    ff_layers: 1
+    cell_type: 'gru'
+    activation: 'relu'
+
+mask_as_exog: True

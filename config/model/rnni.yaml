@@ -1,0 +1,17 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: rnni
+  hparams:
+    hidden_size: 64
+    n_layers: 2
+    cell: 'gru'
+    detach_input: False
+    cat_states_layers: True
+    concat_mask: True
+
+# Imputation
+imputation_loss: True
+
+mask_as_exog: False

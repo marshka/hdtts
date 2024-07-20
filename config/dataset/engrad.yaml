@@ -1,0 +1,48 @@
+# @package _global_
+defaults:
+  - _self_
+  - mode@dataset.mode: block_t  # block_t, block_st
+
+#### Dataset params ###########################################################
+dataset:
+  name: engrad_${dataset.mode.name}
+  hparams:
+    root: ./data/EngRad
+    target_channels: all #  "all", ["temperature_2m", "shortwave_radiation"]
+    covariate_channels: null # null, ["relative_humidity_2m", "precipitation", "cloud_cover"]
+    mask_zero_radiance: True
+    precipitation_unit: cm
+  mode:
+    seed: 487   # also number of nodes
+    min_seq: 4
+    max_seq: 12
+  splitting:
+    method: engrad
+    val_len: 2016     # 7*24*12
+    val_seq_len: 168  # 7*24
+    first_val_step: [2019, 1, 1]
+    first_test_step: [2020, 1, 1]
+  connectivity:
+    method: distance
+    threshold: 0.1
+    theta: 50
+    knn: 8
+    force_symmetric: True
+    include_self: False
+    layout: csr
+  make_graph_connected: True
+  covariates:
+    year: True
+    day: True
+    weekday: False
+    mask: ${mask_as_exog}
+
+#### Windowing params #########################################################
+window: 24
+horizon: 6
+stride: 1
+
+scaler:
+  method: MinMax
+  axis: graph
+  scale_target: False

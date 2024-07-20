@@ -1,0 +1,27 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: hd_tts
+  hparams:
+    hidden_size: 64
+    # Temporal processing params
+    dilation: 3
+    rnn_layers: 4
+    cell: gru  # gru, lstm
+    # MP params
+    mp_method: ["diffconv", "propconv"]  # anisoconv, diffconv, diffconv_sym, propconv
+    mp_kernel_size: 1  # 1, 2
+    # Pooling params
+    pooling_layers: 3
+    mp_stage: "both"  # pre, post, both
+    recursive_lifting: True
+    # Readout
+    fully_connected_readout: True
+    multi_step_scores: True
+    dropout: 0
+    activation: "elu"
+
+dataset:
+  connectivity:
+    layout: csr

@@ -1,0 +1,42 @@
+defaults:
+  - _self_
+  - dataset: air
+  - model: hd_tts_imp
+  - lr_scheduler: redplat
+  - optional model/spec: ${model}_${dataset}
+
+#### Experiment params ########################################################
+hydra:
+  run:
+    dir: logs/${model.name}/${dataset.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: logs/${now:%Y-%m-%d-%H-%M-%S}
+    subdir: ${model.name}/${dataset.name}/${hydra.job.num}
+
+workers: 0
+num_threads: 1
+
+mask_as_exog: False
+
+#### Training params ##########################################################
+epochs: 200
+patience: 30
+batch_size: 32
+train_batches: 300  # 1.0
+grad_clip_val: 5
+scaler:
+  method: Standard
+  axis: graph
+  scale_target: False
+
+optimizer:
+  name: AdamW
+  hparams:
+    lr: 0.001
+    weight_decay: 0.01
+
+#### Imputation params ########################################################
+whiten_prob: null
+imputation_loss: False
+imputation_loss_weight: 1.
+imputation_warm_up: 6

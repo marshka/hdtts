@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - hd_tts
+
+#### Model params #############################################################
+model:
+  name: hd_tts_imp
+  hparams:
+    hidden_size: 64
+    dilation: 3
+    rnn_layers: 4
+    pooling_layers: 3
+    mp_method: ["diffconv", "propconv"]
+    mp_kernel_size: 1  # 1, 2
+    activation: 'elu'

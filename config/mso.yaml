@@ -1,0 +1,14 @@
+defaults:
+  - default
+  - override dataset: mso_point
+  - override lr_scheduler: multistep
+  - _self_
+
+#### Training params ##########################################################
+epochs: 100
+patience: 20
+batch_size: 64
+
+optimizer:
+  hparams:
+    lr: 0.005

@@ -1,0 +1,43 @@
+# @package _global_
+defaults:
+  - _self_
+  - mode@dataset.mode: block_t  # block_t, block_st
+
+#### Dataset params ###########################################################
+dataset:
+  name: pvus_${dataset.mode.name}
+  hparams:
+    zones: 'west'
+    mask_zeros: True
+    freq: '20T'
+  mode:
+    seed: 1082  # also number of nodes
+    min_seq: 6  # 2 hours
+    max_seq: 21 # 7 hours
+  splitting:
+    val_len: 0.1
+    test_len: 0.2
+  connectivity:
+    method: distance
+    threshold: 0.1
+    theta: 150
+    knn: 8
+    force_symmetric: True
+    include_self: False
+    layout: csr
+  make_graph_connected: True
+  covariates:
+    year: True
+    day: True
+    weekday: False
+    mask: ${mask_as_exog}
+
+#### Windowing params #########################################################
+window: 72  # 24 hours
+horizon: 6  # 2 hours
+stride: 1
+
+scaler:
+  method: MinMax
+  axis: node
+  scale_target: True

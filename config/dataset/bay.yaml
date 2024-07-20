@@ -1,0 +1,36 @@
+# @package _global_
+defaults:
+  - _self_
+  - mode@dataset.mode: block_t  # block_t, block_st
+
+#### Dataset params ###########################################################
+dataset:
+  name: bay_${dataset.mode.name}
+  mode:
+    seed: 325  # 56789
+    min_seq: 12  # 1 hour
+    max_seq: 48  # 4 hours
+  splitting:
+    val_len: 0.1
+    test_len: 0.2
+  connectivity:
+    method: distance
+    threshold: 0.1
+    include_self: False
+    layout: csr
+  make_graph_connected: False
+  covariates:
+    year: False
+    day: True
+    weekday: True
+    mask: ${mask_as_exog}
+
+#### Windowing params #########################################################
+window: 24
+horizon: 12
+stride: 1
+
+scaler:
+  method: Standard
+  axis: graph
+  scale_target: False

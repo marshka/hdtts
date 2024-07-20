@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - hd_tts
+
+#### Model params #############################################################
+model:
+  name: hd_tts_amp
+  hparams:
+    hidden_size: 64
+    dilation: 3
+    rnn_layers: 4
+    pooling_layers: 3
+    mp_method: ["anisoconv", "propconv"]
+    activation: 'elu'

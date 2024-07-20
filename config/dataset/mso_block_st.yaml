@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - mso
+  - _self_
+
+#### Dataset params ###########################################################
+dataset:
+  name: mso_block_st
+  hparams:
+    p_fault: 0.005
+    propagate_mask: True 

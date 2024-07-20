@@ -1,0 +1,19 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: dcrnn
+  hparams:
+    hidden_size: 64
+    kernel_size: 2
+    ff_size: 128
+    n_layers: 1
+    dropout: 0.
+    activation: 'elu'
+    cache_support: True
+
+dataset:
+  connectivity:
+    layout: csr
+
+mask_as_exog: True

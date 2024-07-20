@@ -1,0 +1,21 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: grin
+  hparams:
+    hidden_size: 64
+    embedding_size: null
+    kernel_size: 2
+    decoder_order: 1
+    layer_norm: False
+    n_layers: 1
+    activation: "relu"
+    dropout: 0.
+
+# Imputation
+imputation_loss: True
+
+dataset:
+  connectivity:
+    layout: csr

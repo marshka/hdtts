@@ -1,0 +1,36 @@
+# @package _global_
+defaults:
+  - _self_
+  - mode@dataset.mode: normal  # normal, point
+
+#### Dataset params ###########################################################
+dataset:
+  name: air_${dataset.mode.name}
+  mode:
+    seed: 437   # also number of nodes
+    min_seq: 4  # 4 hours
+    max_seq: 12 # 12 hours
+  splitting:
+    method: air_quality
+    val_len: 0.1
+  connectivity:
+    method: distance
+    threshold: 0.1
+    include_self: False
+    layout: csr
+  make_graph_connected: True
+  covariates:
+    year: True
+    day: True
+    weekday: True
+    mask: ${mask_as_exog}
+
+#### Windowing params #########################################################
+window: 24
+horizon: 6
+stride: 1
+
+scaler:
+  method: Standard
+  axis: graph
+  scale_target: False

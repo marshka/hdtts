@@ -1,0 +1,5 @@
+name: block_st
+p_fault: 0.003
+p_noise: 0.075
+p_propagation: [ .33, .15, .05 ]
+propagation_hops: 3
