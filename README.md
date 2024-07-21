@@ -1,4 +1,4 @@
-[![ICML](https://img.shields.io/badge/ICML-2024-blue)]()
+[![ICML](https://img.shields.io/badge/ICML-2024-blue)](https://icml.cc/virtual/2024/poster/32823)
 [![arXiv](https://img.shields.io/badge/arXiv-2402.10634-b31b1b.svg?)](https://arxiv.org/abs/2402.10634)
 [![poster](https://custom-icon-badges.demolab.com/badge/poster-pdf-blue.svg?logo=note&logoSource=feather&logoColor=white)](docs/poster.pdf)
 
@@ -102,7 +102,7 @@ folder.
 
 Please consider citing the paper if you find it useful for your research.
 
-```latex
+```bibtex
 @article{marisca2024graph,
   title={Graph-based forecasting with missing data through spatiotemporal downsampling},
   author={Marisca, Ivan and Alippi, Cesare and Bianchi, Filippo Maria},
