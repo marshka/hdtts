@@ -1,4 +1,4 @@
-[![ICML](https://img.shields.io/badge/ICML-2024-blue)](https://icml.cc/virtual/2024/poster/32823)
+[![ICML](https://img.shields.io/badge/ICML-2024-blue)](https://proceedings.mlr.press/v235/marisca24a.html)
 [![arXiv](https://img.shields.io/badge/arXiv-2402.10634-b31b1b.svg?)](https://arxiv.org/abs/2402.10634)
 [![poster](https://custom-icon-badges.demolab.com/badge/poster-pdf-blue.svg?logo=note&logoSource=feather&logoColor=white)](docs/poster.pdf)
 
@@ -103,10 +103,14 @@ folder.
 Please consider citing the paper if you find it useful for your research.
 
 ```bibtex
-@article{marisca2024graph,
-  title={Graph-based forecasting with missing data through spatiotemporal downsampling},
-  author={Marisca, Ivan and Alippi, Cesare and Bianchi, Filippo Maria},
-  journal={arXiv preprint arXiv:2402.10634},
-  year={2024}
+@inproceedings{marisca2024graph,
+  title     = {Graph-based Forecasting with Missing Data through Spatiotemporal Downsampling},
+  author    = {Marisca, Ivan and Alippi, Cesare and Bianchi, Filippo Maria},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  pages     = {34846--34865},
+  year      = {2024},
+  volume    = {235},
+  series    = {Proceedings of Machine Learning Research},
+  publisher = {PMLR}
 }
 ```
