@@ -181,7 +181,7 @@ class KMISSelect(Select):
             k_sums = x.clone()
 
         for _ in range(self.k):
-            k_sums = scatter(k_sums[row], col, dim_size=adj.size(0),
+            k_sums += scatter(k_sums[row], col, dim_size=adj.size(0),
                              reduce='add')
 
         return x / k_sums
